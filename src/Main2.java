@@ -24,9 +24,15 @@ public class Main2 {
           continue;
         }else {
           //System.out.println("게시글이 존재");
+          /*/
           for(int i = 0; i < articles.size(); i++){
             Article article = articles.get(i);
-            System.out.printf("%d, %s\n", article.id, article.title);
+            System.out.printf("%d, %s\n", article.id, article.title); //순서대로 나와서 역순으로 가고 싶음
+          }
+          */
+          for(int i = articles.size()-1; i >= 0; i--){
+            Article article = articles.get(i);
+            System.out.printf("%d | %s\n", article.id, article.title); //순서대로 나와서 역순으로 가고 싶음
           }
         }
       } else if (cmd.equals("article write")) {
