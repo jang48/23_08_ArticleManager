@@ -21,10 +21,14 @@ public class Main2 {
       if (cmd.equals("article list")) {
         if(articles.size() == 0) {
           System.out.println("게시글이 없습니다");
+          continue;
         }else {
-          System.out.println("게시글이 존재");
+          //System.out.println("게시글이 존재");
+          for(int i = 0; i < articles.size(); i++){
+            Article article = articles.get(i);
+            System.out.printf("%d, %s\n", article.id, article.title);
+          }
         }
-        continue;
       } else if (cmd.equals("article write")) {
         int id = lastArticleid + 1;
         lastArticleid = id;
